@@ -14,7 +14,7 @@ class BroadcasterTests: XCTestCase {
     func testAddListener() {
         let broadcaster = Broadcaster<Listener>()
         let listener = Listener()
-        broadcaster.addListener(listener)
+        broadcaster.add(listener: listener)
 
         broadcaster.broadcast { (listenerToInvoke) in
             XCTAssert(listener === listenerToInvoke)
@@ -24,8 +24,8 @@ class BroadcasterTests: XCTestCase {
     func testRemoveListener() {
         let broadcaster = Broadcaster<Listener>()
         let listener = Listener()
-        broadcaster.addListener(listener)
-        broadcaster.removeListener(listener)
+        broadcaster.add(listener: listener)
+        broadcaster.remove(listener: listener)
 
         broadcaster.broadcast { (listenerToInvoke) in
             XCTAssert(false)
@@ -35,7 +35,7 @@ class BroadcasterTests: XCTestCase {
     func testRemoveNonExistantListener() {
         let broadcaster = Broadcaster<Listener>()
         let listener = Listener()
-        broadcaster.removeListener(listener)
+        broadcaster.remove(listener: listener)
     }
 
     func testBroadcast() {
@@ -45,9 +45,9 @@ class BroadcasterTests: XCTestCase {
         let listener3 = Listener()
         let listeners = [listener1, listener2, listener3]
 
-        broadcaster.addListener(listener1)
-        broadcaster.addListener(listener2)
-        broadcaster.addListener(listener3)
+        broadcaster.add(listener: listener1)
+        broadcaster.add(listener: listener2)
+        broadcaster.add(listener: listener3)
 
         broadcaster.broadcast { (listenerToInvoke) in
             XCTAssert(listeners.contains({ (listener: Listener) -> Bool in
@@ -62,13 +62,13 @@ class BroadcasterTests: XCTestCase {
         let listener2 = Listener()
         let listener3 = Listener()
 
-        broadcaster.addListener(listener1)
-        broadcaster.addListener(listener2)
-        broadcaster.addListener(listener3)
+        broadcaster.add(listener: listener1)
+        broadcaster.add(listener: listener2)
+        broadcaster.add(listener: listener3)
 
         broadcaster.broadcast { (listenerToInvoke) in
             if listenerToInvoke === listener2 {
-                broadcaster.removeListener(listener2)
+                broadcaster.remove(listener: listener2)
             }
         }
     }

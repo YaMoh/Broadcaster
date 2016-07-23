@@ -23,7 +23,7 @@ class Broadcaster<T :AnyObject> {
      * @breif Adds a listener to the broadcaster
      * @param listener The listener to add. Will not be retained.
      */
-    func addListener(listener: T) {
+    func add(listener listener: T) {
         let entry = WeakArrayEntry(listener)
         self.listeners.append(entry)
         self.compact()
@@ -33,7 +33,7 @@ class Broadcaster<T :AnyObject> {
      * @breif Removes a listener from the broadcaster
      * @param listener The listener to remove.
      */
-    func removeListener(listener: T) {
+    func remove(listener listener: T) {
         for (index, element) in self.listeners.enumerate() {
             if element.getReference() === listener {
                 self.listeners.removeAtIndex(index)

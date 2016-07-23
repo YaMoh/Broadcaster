@@ -12,7 +12,6 @@
 		F0B903171D3A3FFD00178EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B903101D3A3FFD00178EEC /* Assets.xcassets */; };
 		F0B903181D3A3FFD00178EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B903111D3A3FFD00178EEC /* LaunchScreen.storyboard */; };
 		F0B903191D3A3FFD00178EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B903131D3A3FFD00178EEC /* Main.storyboard */; };
-		F0B9031A1D3A3FFD00178EEC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0B903151D3A3FFD00178EEC /* Info.plist */; };
 		F0B9031C1D3A402D00178EEC /* DemoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9031B1D3A402D00178EEC /* DemoDataSource.swift */; };
 		F0B9031E1D3A405300178EEC /* DemoSubscriberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9031D1D3A405300178EEC /* DemoSubscriberView.swift */; };
 		F0B903201D3A408C00178EEC /* Broadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9031F1D3A408C00178EEC /* Broadcaster.swift */; };
@@ -274,7 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0B9031A1D3A3FFD00178EEC /* Info.plist in Resources */,
 				F0B903191D3A3FFD00178EEC /* Main.storyboard in Resources */,
 				F0B903171D3A3FFD00178EEC /* Assets.xcassets in Resources */,
 				F0B903181D3A3FFD00178EEC /* LaunchScreen.storyboard in Resources */,
@@ -453,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/YMBroadcaster/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.YMBroadcaster;
+				PRODUCT_BUNDLE_IDENTIFIER = broadcaster.bundle.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -464,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/YMBroadcaster/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.YMBroadcaster;
+				PRODUCT_BUNDLE_IDENTIFIER = broadcaster.bundle.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -534,6 +532,7 @@
 				F0B903051D3A3F7700178EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0B903061D3A3F7700178EEC /* Build configuration list for PBXNativeTarget "YMBroadcasterTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +541,7 @@
 				F0B903081D3A3F7700178EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0B903091D3A3F7700178EEC /* Build configuration list for PBXNativeTarget "YMBroadcasterUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +550,7 @@
 				F0B9030B1D3A3F7700178EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

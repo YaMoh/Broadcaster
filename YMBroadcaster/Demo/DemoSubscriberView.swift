@@ -18,7 +18,7 @@ class DemoSubscriberView: UIView, DemoDataSourceListener {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.dataSource?.addListener(self)
+        self.dataSource?.add(listener: self)
     }
 
     //MARK: - DemoDataSourceListener functions

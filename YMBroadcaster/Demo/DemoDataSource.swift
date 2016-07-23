@@ -19,12 +19,12 @@ class DemoDataSource: NSObject {
 
     //MARK: - Public functions 
 
-    func addListener(listener: DemoDataSourceListener) {
-        self.broadcaster.addListener(listener)
+    func add(listener listener: DemoDataSourceListener) {
+        self.broadcaster.add(listener: listener)
     }
 
-    func removeListener(listener: DemoDataSourceListener) {
-        self.broadcaster.removeListener(listener)
+    func remove(listener listener: DemoDataSourceListener) {
+        self.broadcaster.remove(listener: listener)
     }
 
     @IBAction func generateData() {

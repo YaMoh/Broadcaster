@@ -13,7 +13,7 @@ import Foundation
  */
 class WeakArrayEntry<T: AnyObject> {
 
-    private weak var weakReference: T?
+    fileprivate weak var weakReference: T?
 
     //MARK: - Init functions
 

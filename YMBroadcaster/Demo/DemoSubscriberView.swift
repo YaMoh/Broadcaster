@@ -10,9 +10,9 @@ import UIKit
 
 class DemoSubscriberView: UIView, DemoDataSourceListener {
 
-    @IBOutlet private var label:        UILabel?
+    @IBOutlet fileprivate var label:        UILabel?
 
-    @IBOutlet private var dataSource:   DemoDataSource?
+    @IBOutlet fileprivate var dataSource:   DemoDataSource?
 
     //MARK: - Init functions
     override func awakeFromNib() {
@@ -22,7 +22,7 @@ class DemoSubscriberView: UIView, DemoDataSourceListener {
     }
 
     //MARK: - DemoDataSourceListener functions
-    func newDataReceived(data: String) {
+    func newDataReceived(_ data: String) {
         self.label?.text = data
     }
 

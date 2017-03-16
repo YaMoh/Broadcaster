@@ -15,7 +15,7 @@ import Foundation
  */
 class Broadcaster<T :AnyObject> {
 
-    private var listeners = [WeakArrayEntry<T>]()
+    fileprivate var listeners = [WeakArrayEntry<T>]()
 
     //MARK: - Public functions
 
@@ -23,7 +23,7 @@ class Broadcaster<T :AnyObject> {
      * @breif Adds a listener to the broadcaster
      * @param listener The listener to add. Will not be retained.
      */
-    func add(listener listener: T) {
+    func add(listener: T) {
         let entry = WeakArrayEntry(listener)
         self.listeners.append(entry)
         self.compact()
@@ -33,29 +33,29 @@ class Broadcaster<T :AnyObject> {
      * @breif Removes a listener from the broadcaster
      * @param listener The listener to remove.
      */
-    func remove(listener listener: T) {
-        for (index, element) in self.listeners.enumerate() {
+    func remove(listener: T) {
+        for (index, element) in self.listeners.enumerated() {
             if element.getReference() === listener {
-                self.listeners.removeAtIndex(index)
+                self.listeners.remove(at: index)
             }
         }
         self.compact()
     }
 
-    func broadcast(closure: (listener: T)->()) {
+    func broadcast(_ closure: (_ listener: T)->()) {
         self.listeners.forEach { (entry: WeakArrayEntry<T>) in
             if let reference = entry.getReference() {
-                closure(listener: reference)
+                closure(reference)
             }
         }
     }
 
     //MARK: - Private functions
 
-    private func compact() {
-        for (index, element) in self.listeners.enumerate() {
+    fileprivate func compact() {
+        for (index, element) in self.listeners.enumerated() {
             if element.getReference() == nil {
-                self.listeners.removeAtIndex(index)
+                self.listeners.remove(at: index)
             }
         }
     }

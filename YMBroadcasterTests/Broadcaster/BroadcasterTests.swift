@@ -50,7 +50,7 @@ class BroadcasterTests: XCTestCase {
         broadcaster.add(listener: listener3)
 
         broadcaster.broadcast { (listenerToInvoke) in
-            XCTAssert(listeners.contains({ (listener: Listener) -> Bool in
+            XCTAssert(listeners.contains(where: { (listener: Listener) -> Bool in
                 return listener === listenerToInvoke
             }))
         }
